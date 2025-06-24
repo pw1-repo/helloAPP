@@ -23,7 +23,7 @@ app.post('/who', async (req, res) => {
   console.log(`Variável username recebida do form: ${username}`)
 
   try {
-    const response = await axios.get(`${API_URL}/v1/hi/`)
+    const response = await axios.get(`${API_URL}/v1/hi/user/:${username}`)
     //console.log(response)
     res.render('message', {msg: response.data.msg});
   } catch (err) {
